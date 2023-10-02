@@ -4,11 +4,11 @@ GET https://localhost:7288/api/cliente/listar
 ### Buscar cliente por nome
 GET https://localhost:7288/api/cliente/buscar/Bruna
 ### Cadastrar cliente
-POST https://localhost:7288/api/cliente/cadastrar 
+POST https://localhost:7288/api/cliente/cadastrar
 Content-Type: application/json
 
 {
-    "nome" : "Ana",
+    "nome" : "",
     "endereco" : "Rua dos morangos",
     "telefone" : 997465956
 

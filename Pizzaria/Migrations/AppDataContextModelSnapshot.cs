@@ -34,29 +34,6 @@ namespace ProjetoPizzaria.Migrations
                     b.ToTable("Atendentes");
                 });
 
-            modelBuilder.Entity("ProjetoPizzaria.Models.Cardapio", b =>
-                {
-                    b.Property<int>("CardapioId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("CriadoEm")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Preco")
-                        .HasColumnType("REAL");
-
-                    b.Property<string>("Sabor")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("CardapioId");
-
-                    b.ToTable("Cardapios");
-                });
-
             modelBuilder.Entity("ProjetoPizzaria.Models.Cliente", b =>
                 {
                     b.Property<int>("ClienteId")
