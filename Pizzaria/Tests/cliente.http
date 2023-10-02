@@ -1,0 +1,44 @@
+### Listar cliente
+GET https://localhost:7288/api/cliente/listar
+
+### Buscar cliente por nome
+GET https://localhost:7288/api/cliente/buscar/Bruna
+### Cadastrar cliente
+POST https://localhost:7288/api/cliente/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "",
+    "endereco" : "Rua dos morangos",
+    "telefone" : 997465956
+
+}
+
+
+# {
+#     "nome" : "Bruna",
+#     "endereco" : "Rua das Rosas",
+#     "telefone" : 998754569
+
+# }
+
+# {
+#     "nome" : "Carlos",
+#     "endereco" : "Rua das Laranjeiras",
+#     "telefone" : 997465987
+# }
+
+### Remover cliente pelo ID
+DELETE https://localhost:7288/api/cliente/deletar/1
+
+### Alterar cliente pelo ID
+PUT https://localhost:7288/api/cliente/alterar/2 
+Content-Type: application/json
+
+{
+    "nome" : "Bruna",
+    "endereco" : "Rua das Flores",
+    "telefone" : 998754569
+
+}
+
