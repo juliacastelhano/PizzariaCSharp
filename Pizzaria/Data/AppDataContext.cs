@@ -13,6 +13,8 @@ public class AppDataContext : DbContext
 
     public DbSet<Cliente> Clientes { get; set; }
 
+    public DbSet<Cardapio> Cardapios { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         //Como popular uma base de dados utilizando EF no método

@@ -1,0 +1,23 @@
+### Listar cardapio
+GET https://localhost:7288/api/cardapio/listar
+
+### Buscar cardapio por sabor
+GET https://localhost:7288/api/cardapio/buscar/Calabresa
+
+### Cadastrar cardapio
+POST https://localhost:7288/api/cardapio/cadastrar
+Content-Type: application/json
+
+{
+    "sabor" : "Calabresa",
+    "descricao" : "massa tradicional, molho de tomate, queijo, calabresa e orégano",
+    "preco" : 20
+}
+
+
+### Remover cardapio pelo ID
+DELETE https://localhost:7288/api/cardapio/deletar/1
+
+### Alterar cardapio pelo ID
+PUT https://localhost:7288/api/cardapio/alterar/1 
+Content-Type: application/json
