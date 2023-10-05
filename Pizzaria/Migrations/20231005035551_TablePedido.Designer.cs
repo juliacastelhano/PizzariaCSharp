@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoPizzaria.Data;
 
@@ -10,9 +11,10 @@ using ProjetoPizzaria.Data;
 namespace ProjetoPizzaria.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20231005035551_TablePedido")]
+    partial class TablePedido
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.21");
@@ -89,13 +91,16 @@ namespace ProjetoPizzaria.Migrations
                     b.Property<int>("AtendenteId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CardapioId")
+                    b.Property<int?>("CardapioId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SaborCardapio")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("TotalPedido")
@@ -122,9 +127,7 @@ namespace ProjetoPizzaria.Migrations
 
                     b.HasOne("ProjetoPizzaria.Models.Cardapio", "Cardapio")
                         .WithMany()
-                        .HasForeignKey("CardapioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CardapioId");
 
                     b.HasOne("ProjetoPizzaria.Models.Cliente", "Cliente")
                         .WithMany()
