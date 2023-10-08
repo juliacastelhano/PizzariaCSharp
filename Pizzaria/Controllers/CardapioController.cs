@@ -64,7 +64,7 @@ public class CardapioController : ControllerBase
 	[Route("buscar/{sabor}")]
 	public IActionResult Buscar([FromRoute] string sabor)
 	{
-		//Expressão lambda para buscar um registro na base de dados com EF
+		
 		foreach (Cardapio cardapiocadastrado in _ctx.Cardapios.ToList())
 		{
 			if (cardapiocadastrado.Sabor == sabor)
@@ -103,7 +103,7 @@ public class CardapioController : ControllerBase
 	{
 		try
 		{
-			//Expressões lambda
+			
 			Cardapio? cardapioCadastrado =
 				_ctx.Cardapios.FirstOrDefault(x => x.CardapioId == id);
 			if (cardapioCadastrado != null)

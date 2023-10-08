@@ -14,9 +14,9 @@ public class Pedido
 	public int CardapioId { get; set; }
 	public Carrinho? Carrinho { get; set; }
 	public int CarrinhoId { get; set; }
-	// public int Quantidade { get; set; }
+	
 	public double TotalPedido { get; set; }
-	// public double TotalTodosItens { get; set; }
+	
 	public DateTime CriadoEm { get; set; }
 	
 }

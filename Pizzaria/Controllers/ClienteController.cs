@@ -63,7 +63,7 @@ public IActionResult Cadastrar([FromBody] ClienteDTO clienteDTO)
 	[Route("buscar/{nome}")]
 	public IActionResult Buscar([FromRoute] string nome)
 	{
-		//Expressão lambda para buscar um registro na base de dados com EF
+		
 		foreach (Cliente clienteCadatrado in _ctx.Clientes.ToList())
 		{
 			if (clienteCadatrado.Nome == nome)
@@ -102,7 +102,7 @@ public IActionResult Cadastrar([FromBody] ClienteDTO clienteDTO)
 	{
 		try
 		{
-			//Expressões lambda
+			
 			Cliente? clienteCadastrado =
 				_ctx.Clientes.FirstOrDefault(x => x.ClienteId == id);
 			if (clienteCadastrado != null)

@@ -47,18 +47,13 @@ public class PedidoController : ControllerBase
 		{
 			Atendente? atendente =
 			_ctx.Atendentes.Find(pedidoDTO.AtendenteId);
-			// Atendente atendenteId = _ctx.Atendentes.Find(atendente.AtendenteId);
+			
 			if (atendente == null)
 			{
 				return NotFound("Atendente não encontrado");
 			}
 			
-			// Cliente? cliente =
-			// _ctx.Clientes.Find(pedidoDTO.ClienteId);
-			// if (cliente == null)
-			// {
-			// 	return NotFound("Cliente não encontrado");
-			// }
+		
 
 			Carrinho? carrinho =
 			_ctx.Carrinhos.Find(pedidoDTO.CarrinhoId);
@@ -74,7 +69,7 @@ public class PedidoController : ControllerBase
 			.ToList();
 
 
-			// double valorTotal = carrinho.Quantidade * carrinho.TotalPedido;
+			
 			double valorTotal = carrinho.Quantidade * carrinho.Cardapio.Preco;
 
 			Pedido pedido = new Pedido
@@ -83,11 +78,8 @@ public class PedidoController : ControllerBase
 				AtendenteId = atendente.AtendenteId,
 				Cliente = carrinho.Cliente,
 				ClienteId = carrinho.Cliente.ClienteId,
-				// Cardapio = carrinho.Cardapio,
 				CardapioId = carrinho.Cardapio.CardapioId,
 				CarrinhoId = pedidoDTO.CarrinhoId,
-				// Carrinhos = carrinhos,
-				// Quantidade = carrinho.Quantidade,
 				TotalPedido = valorTotal
 
 			};
@@ -103,59 +95,6 @@ public class PedidoController : ControllerBase
 		}
 	}
 
-	// [HttpPost]
-	// [Route("cadastrar")]
-
-	// public IActionResult Cadastrar([FromBody] PedidoDTO pedidoDTO)
-	// {
-	// 	try
-	// 	{
-	// 		Atendente? atendente =
-	// 		_ctx.Atendentes.Find(pedidoDTO.AtendenteId);
-	// 		Atendente atendenteNome = _ctx.Atendentes.Find(atendente.Nome);
-	// 		if (atendente == null)
-	// 		{
-	// 			return NotFound("Atendente não encontrado");
-	// 		}
-
-	// 		Cliente? cliente =
-	// 		_ctx.Clientes.Find(pedidoDTO.ClienteId);
-	// 		if (cliente == null)
-	// 		{
-	// 			return NotFound("Cliente não encontrado");
-	// 		}
-
-	// 		Cardapio? cardapio =
-	// 		_ctx.Cardapios.Find(pedidoDTO.CardapioId);
-	// 		if (cardapio == null)
-	// 		{
-	// 			return NotFound("Sabor de pizza não encontrado");
-
-	// 		}
-
-	// 		double valorTotal = pedidoDTO.Quantidade * cardapio.Preco;
-
-
-	// 		Pedido pedido = new Pedido
-	// 		{
-	// 			Atendente = atendente,
-	// 			Cliente = cliente,
-	// 			Cardapio = cardapio,
-	// 			Quantidade = pedidoDTO.Quantidade,
-	// 			TotalPedido = valorTotal
-
-	// 		};
-	// 		_ctx.Pedidos.Add(pedido);
-	// 		_ctx.SaveChanges();
-	// 		return Created("", pedido);
-
-	// 	}
-	// 	catch (Exception e)
-	// 	{
-	// 		Console.WriteLine(e);
-	// 		return BadRequest(e.Message);
-	// 	}
-	// }
 
 	[HttpGet]
 	[Route("listarPorCliente/{nomeCliente}")]
@@ -170,7 +109,6 @@ public class PedidoController : ControllerBase
 				.Include(x => x.Cliente)
 				.Include(x => x.Cardapio)
 				.Include(x => x.Carrinho)
-				// .Where(p => p.Cliente.Nome == nomeCliente)
 				.Where(p => p.Carrinho.Cliente.Nome == nomeCliente)
 				.ToList();
 
@@ -179,7 +117,6 @@ public class PedidoController : ControllerBase
 			foreach (Pedido pedido in pedidos)
 			{
 				double precoDoCardapio = pedido.Cardapio.Preco;
-				// double precoDoCardapio = pedido.Carrinho.Cardapio.Preco;
 				double totalPedido = pedido.TotalPedido;
 				totalTodosPedidos += totalPedido;
 			}
@@ -190,11 +127,6 @@ public class PedidoController : ControllerBase
 				Pedidos = pedidos
 			};
 			
-			// Pedido pedido2 = new Pedido
-			// {
-			// 	TotalTodosItens = totalTodosPedidos,
-			// 	Pedidos = pedidos
-			// };
 
 			return pedidos.Count == 0 ? NotFound("Pedido(s) não encontrado(s) para o cliente especificado") : Ok(resposta);
 		}

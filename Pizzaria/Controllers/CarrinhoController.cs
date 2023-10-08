@@ -83,46 +83,6 @@ public class CarrinhoController : ControllerBase
 	}
 	
 	
-	// [HttpPost]
-	// [Route("cadastrar")]
-	
-	// public IActionResult Cadastrar([FromBody] CarrinhoDTO carrinhoDTO) 
-	// {
-	// 	try 
-	// 	{
-			
-
-	// 		Cardapio? cardapio =
-	// 		_ctx.Cardapios.Find(carrinhoDTO.CardapioId);
-	// 		if (cardapio == null) 
-	// 		{
-	// 			return NotFound("Sabor de pizza não encontrado");
-				
-	// 		}
-			
-	// 		double valorTotal = carrinhoDTO.Quantidade * cardapio.Preco;
-			
-			
-	// 		Carrinho carrinho = new Carrinho 
-	// 		{
-		
-	// 			Cardapio = cardapio,
-	// 			Quantidade = carrinhoDTO.Quantidade,
-	// 			TotalPedido = valorTotal
-				
-	// 		};
-	// 		_ctx.Carrinho.Add(carrinho);
-	// 		_ctx.SaveChanges();
-	// 		return Created("", carrinho);
-			
-	// 	}
-	// 	catch (Exception e)
-	// 	{
-	// 		Console.WriteLine(e);
-	// 		return BadRequest(e.Message);
-	// 	}
-	// }
-
 	[HttpDelete]
 	[Route("deletar/{id}")]
 	public IActionResult Deletar([FromRoute] int id)
