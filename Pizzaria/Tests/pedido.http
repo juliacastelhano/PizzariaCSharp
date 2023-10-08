@@ -1,13 +1,17 @@
 ### LISTAR pedidos
 GET https://localhost:7288/api/pedido/listar
 
+### Buscar pedido por Cliente
+GET https://localhost:7288/api/pedido/listarPorCliente/Larissa
+
 ### CADASTRAR pedidos
 POST https://localhost:7288/api/pedido/cadastrar
 Content-Type: application/json
 
 {
-    "AtendenteId" : "2",
-    "ClienteId" : "2",
-    "CardapioId" : 1,
-    "TotalPedido" : 1
+    "atendenteId" : 1,
+    "carrinhoId" : 2
 }
+
+### DELETAR pedido
+DELETE https://localhost:7288/api/pedido/deletar/2

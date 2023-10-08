@@ -11,8 +11,8 @@ using ProjetoPizzaria.Data;
 namespace ProjetoPizzaria.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20231005041049_TablePedido2")]
-    partial class TablePedido2
+    [Migration("20231008224438_TableCarrinhoChanged")]
+    partial class TableCarrinhoChanged
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,9 +24,6 @@ namespace ProjetoPizzaria.Migrations
                     b.Property<int>("AtendenteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("CriadoEm")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
@@ -42,9 +39,6 @@ namespace ProjetoPizzaria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CriadoEm")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
@@ -59,14 +53,41 @@ namespace ProjetoPizzaria.Migrations
                     b.ToTable("Cardapios");
                 });
 
+            modelBuilder.Entity("ProjetoPizzaria.Models.Carrinho", b =>
+                {
+                    b.Property<int>("CarrinhoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CardapioId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("TotalPedido")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("CarrinhoId");
+
+                    b.HasIndex("CardapioId");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Carrinhos");
+                });
+
             modelBuilder.Entity("ProjetoPizzaria.Models.Cliente", b =>
                 {
                     b.Property<int>("ClienteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("CriadoEm")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Endereco")
                         .HasColumnType("TEXT");
@@ -94,11 +115,17 @@ namespace ProjetoPizzaria.Migrations
                     b.Property<int>("CardapioId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("CarrinhoId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("ClienteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("INTEGER");
 
                     b.Property<double>("TotalPedido")
                         .HasColumnType("REAL");
@@ -109,9 +136,30 @@ namespace ProjetoPizzaria.Migrations
 
                     b.HasIndex("CardapioId");
 
+                    b.HasIndex("CarrinhoId");
+
                     b.HasIndex("ClienteId");
 
                     b.ToTable("Pedidos");
+                });
+
+            modelBuilder.Entity("ProjetoPizzaria.Models.Carrinho", b =>
+                {
+                    b.HasOne("ProjetoPizzaria.Models.Cardapio", "Cardapio")
+                        .WithMany()
+                        .HasForeignKey("CardapioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoPizzaria.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cardapio");
+
+                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("ProjetoPizzaria.Models.Pedido", b =>
@@ -128,6 +176,12 @@ namespace ProjetoPizzaria.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ProjetoPizzaria.Models.Carrinho", "Carrinho")
+                        .WithMany()
+                        .HasForeignKey("CarrinhoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ProjetoPizzaria.Models.Cliente", "Cliente")
                         .WithMany()
                         .HasForeignKey("ClienteId")
@@ -137,6 +191,8 @@ namespace ProjetoPizzaria.Migrations
                     b.Navigation("Atendente");
 
                     b.Navigation("Cardapio");
+
+                    b.Navigation("Carrinho");
 
                     b.Navigation("Cliente");
                 });

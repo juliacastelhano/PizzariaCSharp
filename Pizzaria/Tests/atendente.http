@@ -9,7 +9,7 @@ POST https://localhost:7288/api/atendente/cadastrar
 Content-Type: application/json
 
 {
-    "nome" : ""
+    "nome" : "Emanuel"
 }
 
 
@@ -21,3 +21,10 @@ Content-Type: application/json
 ### Remover atendente pelo ID
 DELETE https://localhost:7288/api/atendente/deletar/1
 
+### ALTERAR atendente pelo ID
+PUT https://localhost:7288/api/atendente/alterar/2
+Content-Type: application/json
+
+{
+    "nome" : "Francisco"
+}

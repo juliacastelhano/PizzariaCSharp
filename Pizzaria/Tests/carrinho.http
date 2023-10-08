@@ -1,0 +1,19 @@
+### Listar pizzas do carrinho
+GET https://localhost:7288/api/carrinho/listar
+
+### Adicionar ao carrinho
+POST https://localhost:7288/api/carrinho/cadastrar
+Content-Type: application/json
+
+{
+    "clienteId" : 2,
+    "cardapioId" : 1,
+    "quantidade" : 2
+}
+
+### Buscar carrinho por Cliente
+GET https://localhost:7288/api/carrinho/listarPorCliente/Larissa
+
+
+### Remover carrinho pelo ID
+DELETE https://localhost:7288/api/carrinho/deletar/3

@@ -17,6 +17,8 @@ public class AppDataContext : DbContext
 	
 	public DbSet<Pedido> Pedidos { get; set; }
 
+	public DbSet<Carrinho> Carrinhos { get; set; }
+
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		//Como popular uma base de dados utilizando EF no método
