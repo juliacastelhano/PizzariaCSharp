@@ -4,7 +4,7 @@ import { Carrinho } from "./carrinho.models";
 import { Cliente } from "./cliente.models";
 
 export interface Pedido {
-    pedidoId : number;
+    pedidoId? : number;
     atendente? : Atendente;
     atendenteId : number;
     cliente? : Cliente;

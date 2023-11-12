@@ -4,6 +4,9 @@ import { ListarAtendenteComponent } from './pages/atendente/listar-atendente/lis
 import { CadastrarAtendenteComponent } from './pages/atendente/cadastrar-atendente/cadastrar-atendente.component';
 import { AlterarAtendenteComponent } from './pages/atendente/alterar-atendente/alterar-atendente.component';
 import { ListarCardapioComponent } from './pages/cardapio/listar-cardapio/listar-cardapio.component';
+import { CadastrarCardapioComponent } from './pages/cardapio/cadastrar-cardapio/cadastrar-cardapio.component';
+import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cliente.component';
+import { CadastrarClienteComponent } from './pages/cliente/cadastrar-cliente/cadastrar-cliente.component';
 
 
 const routes: Routes = [
@@ -22,6 +25,18 @@ const routes: Routes = [
   {
     path: "pages/cardapio/listar-cardapio",
     component: ListarCardapioComponent,
+  },
+  {
+    path: "pages/cardapio/cadastrar-cardapio",
+    component: CadastrarCardapioComponent,
+  },
+  {
+    path: "pages/cliente/listar-cliente",
+    component: ListarClienteComponent,
+  },
+  {
+    path: "pages/cliente/cadastrar-cliente",
+    component: CadastrarClienteComponent
   },
 ];
 

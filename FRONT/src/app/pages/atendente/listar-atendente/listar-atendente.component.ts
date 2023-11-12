@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Atendente } from 'src/app/models/atendente.models';
 import { HttpClient } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-atendente',
@@ -13,12 +14,15 @@ export class ListarAtendenteComponent {
     "id",
     "nome",
     "deletar",
-    "alterar",
+    // "alterar",
   ];
 
   atendentes: Atendente[] = [];
 
-  constructor( private client: HttpClient, private snackBar: MatSnackBar) {}
+  constructor( private client: HttpClient, 
+    private snackBar: MatSnackBar,
+    private router: Router,
+    ) {}
 
   ngOnInit(): void {
     this.client
@@ -47,8 +51,9 @@ export class ListarAtendenteComponent {
         this.snackBar.open("Atendente deletado com sucesso!", "OK", {
           duration: 2000,
           horizontalPosition: "left",
-          verticalPosition: "top",
+          verticalPosition: "top",          
         });
+        this.ngOnInit();
       },
 
       error: (erro) => {

@@ -8,24 +8,45 @@
 <mat-sidenav-container class="container">
   <mat-sidenav #sidenav [opened]="true" mode="side">
     <mat-nav-list>
+      <a mat-list-item routerLink="/pages/cardapio/listar-cardapio">
+        <div class="item">
+          <mat-icon class="icon"> local_pizza </mat-icon>
+          <span>Listar Pizzas</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/cardapio/cadastrar-cardapio">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span>Cadastrar Pizza</span>
+        </div>
+      </a>
+      <hr>
+      <a mat-list-item routerLink="/pages/cliente/listar-cliente">
+        <div class="item">
+          <mat-icon class="icon"> groups </mat-icon>
+          <span>Listar Clientes</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/cliente/cadastrar-cliente">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span>Cadastrar Cliente</span>
+        </div>
+      </a>
+      <hr>
       <a mat-list-item routerLink="/pages/atendente/listar-atendente">
         <div class="item">
-          <mat-icon class="icon"> list </mat-icon>
+          <mat-icon class="icon"> person_apron </mat-icon>
           <span>Listar Atendentes</span>
         </div>
       </a>
       <a mat-list-item routerLink="/pages/atendente/cadastrar-atendente">
         <div class="item">
           <mat-icon class="icon"> add </mat-icon>
-          <span>Cadastrar Atendentes</span>
+          <span>Cadastrar Atendente</span>
         </div>
       </a>
-      <a mat-list-item routerLink="/pages/cardapio/listar-cardapio">
-        <div class="item">
-          <mat-icon class="icon"> list </mat-icon>
-          <span>Listar Cardápio</span>
-        </div>
-      </a>
+      <hr>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="content">

@@ -23,6 +23,8 @@ import { ListarAtendenteComponent } from './pages/atendente/listar-atendente/lis
 import { AlterarAtendenteComponent } from './pages/atendente/alterar-atendente/alterar-atendente.component';
 import { ListarCardapioComponent } from './pages/cardapio/listar-cardapio/listar-cardapio.component';
 import { CadastrarCardapioComponent } from './pages/cardapio/cadastrar-cardapio/cadastrar-cardapio.component';
+import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cliente.component';
+import { CadastrarClienteComponent } from './pages/cliente/cadastrar-cliente/cadastrar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CadastrarCardapioComponent } from './pages/cardapio/cadastrar-cardapio/
     AlterarAtendenteComponent,
     ListarCardapioComponent,
     CadastrarCardapioComponent,
+    ListarClienteComponent,
+    CadastrarClienteComponent,
   ],
   imports: [
     BrowserModule,

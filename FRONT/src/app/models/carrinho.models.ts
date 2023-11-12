@@ -2,7 +2,7 @@ import { Cardapio } from "./cardapio.models";
 import { Cliente } from "./cliente.models";
 
 export interface Carrinho {
-    carrinhoId : number;
+    carrinhoId? : number;
     cliente? : Cliente;
     clienteId : number;
     cardapio : Cardapio;
