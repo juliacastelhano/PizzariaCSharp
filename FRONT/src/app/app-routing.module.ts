@@ -7,6 +7,8 @@ import { ListarCardapioComponent } from './pages/cardapio/listar-cardapio/listar
 import { CadastrarCardapioComponent } from './pages/cardapio/cadastrar-cardapio/cadastrar-cardapio.component';
 import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cliente.component';
 import { CadastrarClienteComponent } from './pages/cliente/cadastrar-cliente/cadastrar-cliente.component';
+import { AlterarClienteComponent } from './pages/cliente/alterar-cliente/alterar-cliente.component';
+import { AlterarCardapioComponent } from './pages/cardapio/alterar-cardapio/alterar-cardapio.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,7 @@ const routes: Routes = [
     component: CadastrarAtendenteComponent,
   },
   {
-    path: "pages/atendente/alterar-atendente/:nome",
+    path: "pages/atendente/alterar-atendente/:id",
     component: AlterarAtendenteComponent,
   },
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path: "pages/cliente/cadastrar-cliente",
     component: CadastrarClienteComponent
+  },
+  {
+    path: "pages/cliente/alterar-cliente/:id",
+    component: AlterarClienteComponent,
+  },
+  {
+    path: "pages/cardapio/alterar-cardapio/:id",
+    component: AlterarCardapioComponent,
   },
 ];
 

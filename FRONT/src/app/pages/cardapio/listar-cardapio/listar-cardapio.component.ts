@@ -15,7 +15,7 @@ export class ListarCardapioComponent {
     "descricao",
     "preco",
     "deletar",
-    // "alterar",
+    "alterar",
   ];
 
   cardapios: Cardapio[] = [];

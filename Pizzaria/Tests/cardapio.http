@@ -2,7 +2,7 @@
 GET https://localhost:7288/api/cardapio/listar
 
 ### Buscar cardapio por sabor
-GET https://localhost:7288/api/cardapio/buscar/Calabresa
+GET https://localhost:7288/api/cardapio/buscar/1
 
 ### Cadastrar cardapio
 POST https://localhost:7288/api/cardapio/cadastrar

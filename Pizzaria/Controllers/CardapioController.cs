@@ -61,13 +61,13 @@ public class CardapioController : ControllerBase
 	}
 
 	[HttpGet]
-	[Route("buscar/{sabor}")]
-	public IActionResult Buscar([FromRoute] string sabor)
+	[Route("buscar/{id}")]
+	public IActionResult Buscar([FromRoute] int id)
 	{
 		
 		foreach (Cardapio cardapiocadastrado in _ctx.Cardapios.ToList())
 		{
-			if (cardapiocadastrado.Sabor == sabor)
+			if (cardapiocadastrado.CardapioId == id)
 			{
 				return Ok(cardapiocadastrado);
 			}

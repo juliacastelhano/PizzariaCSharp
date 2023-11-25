@@ -2,7 +2,7 @@
 GET https://localhost:7288/api/cliente/listar
 
 ### Buscar cliente por nome
-GET https://localhost:7288/api/cliente/buscar/Bruna
+GET https://localhost:7288/api/cliente/buscar/2
 
 ### Cadastrar cliente
 POST https://localhost:7288/api/cliente/cadastrar

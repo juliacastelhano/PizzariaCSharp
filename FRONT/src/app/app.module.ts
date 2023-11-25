@@ -25,6 +25,8 @@ import { ListarCardapioComponent } from './pages/cardapio/listar-cardapio/listar
 import { CadastrarCardapioComponent } from './pages/cardapio/cadastrar-cardapio/cadastrar-cardapio.component';
 import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cliente.component';
 import { CadastrarClienteComponent } from './pages/cliente/cadastrar-cliente/cadastrar-cliente.component';
+import { AlterarClienteComponent } from './pages/cliente/alterar-cliente/alterar-cliente.component';
+import { AlterarCardapioComponent } from './pages/cardapio/alterar-cardapio/alterar-cardapio.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { CadastrarClienteComponent } from './pages/cliente/cadastrar-cliente/cad
     CadastrarCardapioComponent,
     ListarClienteComponent,
     CadastrarClienteComponent,
+    AlterarClienteComponent,
+    AlterarCardapioComponent,
   ],
   imports: [
     BrowserModule,

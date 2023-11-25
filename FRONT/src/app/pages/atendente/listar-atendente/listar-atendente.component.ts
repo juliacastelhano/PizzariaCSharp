@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Atendente } from 'src/app/models/atendente.models';
 import { HttpClient } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { Router } from '@angular/router';
+import { Atendente } from 'src/app/models/atendente.models';
 
 @Component({
   selector: 'app-listar-atendente',
@@ -14,14 +13,13 @@ export class ListarAtendenteComponent {
     "id",
     "nome",
     "deletar",
-    // "alterar",
+    "alterar",
   ];
 
   atendentes: Atendente[] = [];
 
   constructor( private client: HttpClient, 
     private snackBar: MatSnackBar,
-    private router: Router,
     ) {}
 
   ngOnInit(): void {

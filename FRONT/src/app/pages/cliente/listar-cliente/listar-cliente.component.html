@@ -56,19 +56,18 @@
             </button>
           </td>
         </ng-container>
-        
-        <!-- <ng-container matColumnDef="alterar">
+        <ng-container matColumnDef="alterar">
           <th mat-header-cell *matHeaderCellDef>Alterar</th>
           <td mat-cell *matCellDef="let cliente">
             <a
               color="accent"
               mat-stroked-button
-              routerLink="/pages/cliente/alterar/{{ cliente.clienteId }}"
+              routerLink="/pages/cliente/alterar-cliente/{{ cliente.clienteId }}"
             >
               Alterar
             </a>
           </td>
-        </ng-container> -->
+        </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
         <tr mat-row *matRowDef="let row; columns: colunasTabela"></tr>

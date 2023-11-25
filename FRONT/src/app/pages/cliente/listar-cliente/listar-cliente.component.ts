@@ -15,7 +15,7 @@ export class ListarClienteComponent {
     "endereco",
     "telefone",
     "deletar",
-    // "alterar",
+    "alterar",
   ];
 
   clientes: Cliente[] = [];

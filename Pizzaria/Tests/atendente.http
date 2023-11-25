@@ -2,8 +2,7 @@
 GET https://localhost:7288/api/atendente/listar
 
 ### Buscar atendente por nome
-GET https://localhost:7288/api/atendente/buscar/Elis
-
+GET https://localhost:7288/api/atendente/buscar/1
 ### Cadastrar atendente
 POST https://localhost:7288/api/atendente/cadastrar
 Content-Type: application/json

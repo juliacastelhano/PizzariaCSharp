@@ -56,13 +56,13 @@ public class AtendenteController : ControllerBase
 
 
 	[HttpGet]
-	[Route("buscar/{nome}")]
-	public IActionResult Buscar([FromRoute] string nome)
+	[Route("buscar/{id}")]
+	public IActionResult Buscar([FromRoute] int id)
 	{
 		//Expressão lambda para buscar um registro na base de dados com EF
 		foreach (Atendente atendenteCadastrado in _ctx.Atendentes.ToList())
 		{
-			if (atendenteCadastrado.Nome == nome)
+			if (atendenteCadastrado.AtendenteId == id)
 			{
 				return Ok(atendenteCadastrado);
 			}

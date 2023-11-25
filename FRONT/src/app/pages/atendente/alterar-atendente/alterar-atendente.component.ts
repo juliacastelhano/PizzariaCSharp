@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Atendente } from 'src/app/models/atendente.models';
 
 @Component({
-  selector: 'app-alterar-cliente',
+  selector: 'app-alterar-atendente',
   templateUrl: "./alterar-atendente.component.html" ,
   styleUrls: ["./alterar-atendente.component.css"],
 })
@@ -20,34 +20,12 @@ export class AlterarAtendenteComponent {
     private route: ActivatedRoute
   ) {}
 
-  // ngOnInit(): void {
-  //   this.route.params.subscribe({
-  //     next: (parametros) => {
-  //       let { nome } = parametros;
-  //       this.client.get<Atendente>(`https://localhost:7288/api/atendente/buscar/${nome}`).subscribe({
-  //         next: (atendente) => {
-  //               this.atendenteId = atendente.atendenteId!;
-  //               this.nome = atendente.nome;
-  //             },
-  //             error: (erro) => {
-  //               console.log(erro);
-  //             },
-  //           });
-  //         },
-  //         //Requisição com erro
-  //         error: (erro) => {
-  //           console.log(erro);
-  //         },
-  //       // });
-  //     },
-  //   });
-  // }
-
+ 
   ngOnInit(): void {
     this.route.params.subscribe({
       next: (parametros) => {
-        let { nome } = parametros;
-        this.client.get<Atendente>(`hhttps://localhost:7288/api/atendente/buscar/${nome}`).subscribe({
+        let { id } = parametros;
+        this.client.get<Atendente>(`https://localhost:7288/api/atendente/buscar/${id}`).subscribe({
           next: (atendente) => {
             this.atendenteId = atendente.atendenteId!;
             this.nome = atendente.nome;
@@ -68,7 +46,7 @@ export class AlterarAtendenteComponent {
 
     console.log(atendente);
 
-    this.client.put<Atendente>(`https://localhost:7288/api/atendente/alterar/${this.nome}`, atendente).subscribe({
+    this.client.put<Atendente>(`https://localhost:7288/api/atendente/alterar/${this.atendenteId}`, atendente).subscribe({
       //A requição funcionou
       next: (atendente) => {
         this.snackBar.open("Atendente alterado com sucesso!!", "OK", {

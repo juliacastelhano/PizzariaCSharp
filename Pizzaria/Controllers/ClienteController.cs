@@ -60,13 +60,13 @@ public IActionResult Cadastrar([FromBody] ClienteDTO clienteDTO)
 }
 
 	[HttpGet]
-	[Route("buscar/{nome}")]
-	public IActionResult Buscar([FromRoute] string nome)
+	[Route("buscar/{id}")]
+	public IActionResult Buscar([FromRoute] int id)
 	{
 		
 		foreach (Cliente clienteCadatrado in _ctx.Clientes.ToList())
 		{
-			if (clienteCadatrado.Nome == nome)
+			if (clienteCadatrado.ClienteId == id)
 			{
 				return Ok(clienteCadatrado);
 			}
