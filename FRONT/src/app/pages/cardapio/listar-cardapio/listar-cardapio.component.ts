@@ -14,6 +14,7 @@ export class ListarCardapioComponent {
     "sabor",
     "descricao",
     "preco",
+    "estoque",
     "deletar",
     "alterar",
   ];

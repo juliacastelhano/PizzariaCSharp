@@ -7,14 +7,14 @@ GET https://localhost:7288/api/atendente/buscar/1
 POST https://localhost:7288/api/atendente/cadastrar
 Content-Type: application/json
 
-{
-    "nome" : "Emanuel"
-}
-
-
 # {
-#     "nome" : "Elis"
+#     "nome" : "Emanuel"
 # }
+
+
+{
+    "nome" : "Elis"
+}
 
 
 ### Remover atendente pelo ID

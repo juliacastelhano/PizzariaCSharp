@@ -15,18 +15,18 @@ Content-Type: application/json
 
 # }
 
-{
-    "nome" : "Bruna",
-    "endereco" : "Rua das Rosas",
-    "telefone" : 998754569
-
-}
-
 # {
-#     "nome" : "Carlos",
-#     "endereco" : "Rua das Laranjeiras",
-#     "telefone" : 997465987
+#     "nome" : "Luna",
+#     "endereco" : "Rua das Rosas",
+#     "telefone" : 998754569
+
 # }
+
+{
+    "nome" : "Carlos",
+    "endereco" : "Rua das Laranjeiras",
+    "telefone" : 997465987
+}
 
 ### Remover cliente pelo ID
 DELETE https://localhost:7288/api/cliente/deletar/6

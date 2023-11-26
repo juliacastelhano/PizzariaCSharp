@@ -14,6 +14,7 @@ public class CarrinhoDTO
 
 	[Range(0, 10000)]
 	public double TotalPedido { get; set; }
+
 	
 	
 	

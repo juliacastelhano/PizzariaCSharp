@@ -11,8 +11,8 @@ using ProjetoPizzaria.Data;
 namespace ProjetoPizzaria.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20231008224438_TableCarrinhoChanged")]
-    partial class TableCarrinhoChanged
+    [Migration("20231126022849_Tabela")]
+    partial class Tabela
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,6 +44,9 @@ namespace ProjetoPizzaria.Migrations
 
                     b.Property<double>("Preco")
                         .HasColumnType("REAL");
+
+                    b.Property<int>("QuantidadeEstoque")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Sabor")
                         .HasColumnType("TEXT");
@@ -123,9 +126,6 @@ namespace ProjetoPizzaria.Migrations
 
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
 
                     b.Property<double>("TotalPedido")
                         .HasColumnType("REAL");

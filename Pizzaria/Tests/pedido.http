@@ -2,7 +2,7 @@
 GET https://localhost:7288/api/pedido/listar
 
 ### Buscar pedido por Cliente
-GET https://localhost:7288/api/pedido/listarPorCliente/Larissa
+GET https://localhost:7288/api/pedido/listarPorCliente/Luna
 
 ### CADASTRAR pedidos
 POST https://localhost:7288/api/pedido/cadastrar
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "atendenteId" : 1,
-    "carrinhoId" : 2
+    "carrinhoId" : 1
 }
 
 ### DELETAR pedido

@@ -40,10 +40,11 @@ public class CarrinhoController : ControllerBase
 	[HttpPost]
 	[Route("cadastrar")]
 	
-	public IActionResult Cadastrar([FromBody] CarrinhoDTO carrinhoDTO) 
+	public IActionResult Cadastrar([FromBody] CarrinhoDTO carrinhoDTO, int QuantidadeEstoque) 
 	{
 		try 
 		{
+			
 			Cliente? cliente =
 			_ctx.Clientes.Find(carrinhoDTO.ClienteId);
 			if (cliente == null)
@@ -72,18 +73,27 @@ public class CarrinhoController : ControllerBase
 			};
 			_ctx.Carrinhos.Add(carrinho);
 			_ctx.SaveChanges();
-			return Created("", carrinho);
-			
-		}
-		catch (Exception e)
+
+			var quantidadeEmEstoque = cardapio.QuantidadeEstoque;
+		if (quantidadeEmEstoque == 0)
 		{
+		return NotFound("Sem esse sabor de pizza em estoque");
+		}
+
+		_ctx.SaveChanges();
+
+		return Created("", carrinho);
+
+	}
+	catch (Exception e)
+	{
 			Console.WriteLine(e);
 			return BadRequest(e.Message);
-		}
 	}
-	
-	
-	[HttpDelete]
+}
+   
+
+    [HttpDelete]
 	[Route("deletar/{id}")]
 	public IActionResult Deletar([FromRoute] int id)
 	{

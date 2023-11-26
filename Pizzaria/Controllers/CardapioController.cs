@@ -44,7 +44,8 @@ public class CardapioController : ControllerBase
 			{
 				Sabor = cardapioDTO.Sabor,
 				Descricao = cardapioDTO.Descricao,
-				Preco = cardapioDTO.Preco
+				Preco = cardapioDTO.Preco,
+				QuantidadeEstoque = cardapioDTO.QuantidadeEstoque
 			};
 
 			_ctx.Cardapios.Add(cardapio);
@@ -111,6 +112,7 @@ public class CardapioController : ControllerBase
 				cardapioCadastrado.Sabor = cardapio.Sabor;
 				cardapioCadastrado.Preco = cardapio.Preco;
 				cardapioCadastrado.Descricao = cardapio.Descricao;
+				cardapioCadastrado.QuantidadeEstoque = cardapio.QuantidadeEstoque;
 				_ctx.Cardapios.Update(cardapioCadastrado);
 				_ctx.SaveChanges();
 				return Ok(cardapioCadastrado);

@@ -43,6 +43,9 @@ namespace ProjetoPizzaria.Migrations
                     b.Property<double>("Preco")
                         .HasColumnType("REAL");
 
+                    b.Property<int>("QuantidadeEstoque")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Sabor")
                         .HasColumnType("TEXT");
 

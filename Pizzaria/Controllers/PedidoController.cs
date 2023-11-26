@@ -38,8 +38,7 @@ public class PedidoController : ControllerBase
 		}
 
 	}
-
-	[HttpPost]
+[HttpPost]
 	[Route("cadastrar")]
 	public IActionResult Cadastrar([FromBody] PedidoDTO pedidoDTO)
 	{
@@ -94,7 +93,6 @@ public class PedidoController : ControllerBase
 			return BadRequest(e.Message);
 		}
 	}
-
 
 	[HttpGet]
 	[Route("listarPorCliente/{nomeCliente}")]
@@ -156,7 +154,5 @@ public class PedidoController : ControllerBase
 			return BadRequest(e.Message);
 		}
 	}
-
-
 
 }

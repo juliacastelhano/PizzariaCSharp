@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProjetoPizzaria.Migrations
 {
-    public partial class TablesCreated : Migration
+    public partial class Tabela : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,8 @@ namespace ProjetoPizzaria.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Sabor = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Preco = table.Column<double>(type: "REAL", nullable: false)
+                    Preco = table.Column<double>(type: "REAL", nullable: false),
+                    QuantidadeEstoque = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,7 +63,6 @@ namespace ProjetoPizzaria.Migrations
                     CardapioId = table.Column<int>(type: "INTEGER", nullable: false),
                     Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
                     TotalPedido = table.Column<double>(type: "REAL", nullable: false),
-                    TotalTodosItens = table.Column<double>(type: "REAL", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -92,7 +92,6 @@ namespace ProjetoPizzaria.Migrations
                     ClienteId = table.Column<int>(type: "INTEGER", nullable: false),
                     CardapioId = table.Column<int>(type: "INTEGER", nullable: false),
                     CarrinhoId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
                     TotalPedido = table.Column<double>(type: "REAL", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },

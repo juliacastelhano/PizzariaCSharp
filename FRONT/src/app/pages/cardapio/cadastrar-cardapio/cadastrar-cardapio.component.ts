@@ -13,6 +13,7 @@ export class CadastrarCardapioComponent {
   sabor: string = "";
   descricao: string = "";
   preco: string = "";
+ 
 
   constructor(
     private client: HttpClient,
@@ -26,6 +27,8 @@ export class CadastrarCardapioComponent {
       sabor: this.sabor,
       descricao: this.descricao,
       preco: Number.parseFloat(this.preco),
+
+
     };
 
     this.client

@@ -13,5 +13,7 @@ public string? Descricao { get; set; }
 [Required]
 [Range(1, 1000)]
 public double Preco { get; set; }
+
+public int QuantidadeEstoque { get; set;}
   
 }

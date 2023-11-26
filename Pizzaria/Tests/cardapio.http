@@ -11,31 +11,43 @@ Content-Type: application/json
 # {
 #     "sabor" : "Calabresa",
 #     "descricao" : "Massa tradicional, molho de tomate, queijo, calabresa e orégano",
-#     "preco" : 20
+#     "preco" : 20,
+#     "quantidadeEstoque" : 4
+# }
+
+# {
+#     "sabor" : "Frango com catupiry",
+#     "descricao" : "Massa fina, molho de tomate, mussarela, frango desfiado e catupiry",
+#     "preco" : 10,
+#     "quantidadeEstoque" : 5
 # }
 
 {
     "sabor" : "Margherita",
     "descricao" : "massa tradicional, molho de tomate, queijo mozzarella, manjericão fresco e um fio de azeite de oliva",
-    "preco" : 30
+    "preco" : 30,
+    "quantidadeEstoque" : 2
 }
 
 # {
 #     "sabor" : "Frango com Catupiry",
 #     "descricao" : "massa tradicional, molho de tomate, frango desfiado, requeijão Catupiry e queijo",
-#     "preco" : 50
+#     "preco" : 50,
+#     "quantidadeEstoque" : 2
 # }
 
 # {
 #     "sabor" : "Quatro Queijos",
 #     "descricao" : "massa tradicional, molho de tomate, mozzarella, gorgonzola, parmesão e provolone",
-#     "preco" : 60
+#     "preco" : 60,
+#     "quantidadeEstoque" : 2
 # }
 
 # {
 #     "sabor" : "Portuguesa",
 #     "descricao" : "massa tradicional, molho de tomate, queijo mozzarella, presunto, ovos cozidos, cebola, azeitonas e pimentão",
-#     "preco" : 40
+#     "preco" : 40,
+#     "quantidadeEstoque" : 3
 # }
 
 ### Remover cardapio pelo ID

@@ -5,5 +5,6 @@ public class Cardapio
 	public string? Sabor { get; set; } 
 	public string? Descricao { get; set; } 
 	public double Preco { get; set; }
+    public int QuantidadeEstoque { get; set;}
 	
 }
