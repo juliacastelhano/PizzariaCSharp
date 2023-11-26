@@ -1,0 +1,26 @@
+.input {
+    width: 50%;
+    display: block;
+}
+
+.content {
+    background-color: #E2C799;
+    }
+    
+.header {
+    background-color: #E2C799;
+}
+
+.cadastrar {
+    background-color: #E2C799;
+}
+
+.btnCadastrar {
+    background-color: #EC8F5E;
+    align-items: center;
+    margin: 10px;
+}
+
+.tittle {
+    color: black;
+}

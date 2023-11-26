@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header class="header">
+      <mat-card-title class="tittle">Fazer Pedido</mat-card-title>
+      <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="content">
+      <mat-form-field class="input" id="cliente">
+        <mat-label>Cliente</mat-label>
+        <mat-select [(ngModel)]="clienteId">
+          <mat-option *ngFor="let c of clientes" [value]="c.clienteId">
+            {{ c.nome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="input" id="cardapio">
+        <mat-label>Pizza</mat-label>
+        <mat-select [(ngModel)]="cardapioId">
+          <mat-option *ngFor="let card of cardapios" [value]="card.cardapioId">
+            {{ card.sabor }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="input" id="quantidade">
+        <mat-label>Quantidade</mat-label>
+        <input
+          placeholder="Ex. 3"
+          matInput
+          type="text"
+          [(ngModel)]="quantidade"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="cadastrar">
+      <button color="primary" mat-stroked-button (click)="cadastrar()" class="btnCadastrar">
+        Comprar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  

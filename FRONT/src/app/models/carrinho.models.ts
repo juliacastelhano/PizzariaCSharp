@@ -5,9 +5,9 @@ export interface Carrinho {
     carrinhoId? : number;
     cliente? : Cliente;
     clienteId : number;
-    cardapio : Cardapio;
+    cardapio? : Cardapio;
     cardapioId : number;
     quantidade : number;
-    totalPedido : number;
+    totalPedido? : number;
     criadoEm? : string;
 }

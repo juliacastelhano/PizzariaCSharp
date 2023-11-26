@@ -9,6 +9,8 @@ import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cl
 import { CadastrarClienteComponent } from './pages/cliente/cadastrar-cliente/cadastrar-cliente.component';
 import { AlterarClienteComponent } from './pages/cliente/alterar-cliente/alterar-cliente.component';
 import { AlterarCardapioComponent } from './pages/cardapio/alterar-cardapio/alterar-cardapio.component';
+import { ListarCarrinhoComponent } from './pages/carrinho/listar-carrinho/listar-carrinho.component';
+import { CadastrarCarrinhoComponent } from './pages/carrinho/cadastrar-carrinho/cadastrar-carrinho.component';
 
 
 const routes: Routes = [
@@ -47,6 +49,14 @@ const routes: Routes = [
   {
     path: "pages/cardapio/alterar-cardapio/:id",
     component: AlterarCardapioComponent,
+  },
+  {
+    path: "pages/carrinho/listar-carrinho",
+    component: ListarCarrinhoComponent,
+  },
+  {
+    path: "pages/carrinho/cadastrar-carrinho",
+    component: CadastrarCarrinhoComponent,
   },
 ];
 
