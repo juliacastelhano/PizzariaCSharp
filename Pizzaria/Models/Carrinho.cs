@@ -12,6 +12,8 @@ public class Carrinho
 	public int CardapioId { get; set; }
 	public int Quantidade { get; set; }
 	public double TotalPedido { get; set; }
+
+	public bool Finalizado { get; set; }
 	
 	public DateTime CriadoEm { get; set; }
 	

@@ -17,7 +17,7 @@ export class ListarCarrinhoComponent {
     "totalPedido",
     "criadoEm",
     "deletar",
-    // "alterar",
+    "finalizar",
   ];
 
   carrinhos: Carrinho[] = [];
@@ -39,6 +39,7 @@ export class ListarCarrinhoComponent {
         },
       });
   }
+
 
   deletar(carrinhoId: number) {
     this.client
@@ -62,4 +63,27 @@ export class ListarCarrinhoComponent {
         },
       });
   }
+
+  finalizarPedido(carrinhoId: number) {
+    this.client.patch(`https://localhost:7288/api/carrinho/finalizar/${carrinhoId}`, {}).subscribe({
+      next: (resposta) => {
+        console.log('Pedido finalizado com sucesso', resposta);
+        this.ngOnInit(); // Atualize a lista de carrinhos após finalizar
+        this.snackBar.open('Pedido finalizado com sucesso!!', 'OK', {
+          duration: 2000,
+          horizontalPosition: 'left',
+          verticalPosition: 'top',
+        });
+      },
+      error: (erro) => {
+        console.error('Erro ao finalizar o pedido', erro);
+        this.snackBar.open('Pedido já finalizado com sucesso!!', 'OK', {
+          duration: 2000,
+          horizontalPosition: 'left',
+          verticalPosition: 'top',
+        });
+      },
+    });
+  }
+
 }

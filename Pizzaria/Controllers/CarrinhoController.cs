@@ -152,6 +152,111 @@ public class CarrinhoController : ControllerBase
 			return BadRequest(e.Message);
 		}
 	}
+
+
+	// [HttpPut]
+	// [Route("alterar/{id}")]
+	// public IActionResult Alterar([FromRoute] int id,
+	// 	[FromBody] Carrinho carrinho)
+	// {
+	// 	try
+	// 	{
+			
+	// 		Carrinho? carrinhoCadastrado =
+	// 			_ctx.Carrinhos.FirstOrDefault(x => x.CarrinhoId == id);
+	// 		if (carrinhoCadastrado != null)
+	// 		{
+				
+	// 			carrinhoCadastrado.ClienteId = carrinho.ClienteId;
+	// 			carrinhoCadastrado.CardapioId = carrinho.CardapioId;
+	// 			carrinhoCadastrado.Quantidade = carrinho.Quantidade;
+
+
+	// 			_ctx.Carrinhos.Update(carrinhoCadastrado);
+	// 			_ctx.SaveChanges();
+	// 			return Ok(carrinhoCadastrado);
+
 	
+	// 		}
+	// 		return NotFound("Carrinho não encontrado");
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return BadRequest(e.Message);
+	// 	}
+	// }
+	
+	[HttpPatch]
+    [Route("finalizar/{id}")]
+	public IActionResult FinalizarPedido([FromRoute] int id)
+{
+    try
+    {
+        Carrinho carrinho = _ctx.Carrinhos
+            .Include(x => x.Cliente)
+            .Include(x => x.Cardapio)
+            .FirstOrDefault(c => c.CarrinhoId == id);
+
+        if (carrinho == null)
+        {
+            return NotFound("Carrinho não encontrado");
+        }
+
+        if (carrinho.Finalizado)
+        {
+            return BadRequest("Este carrinho já foi finalizado anteriormente");
+        }
+
+    
+        carrinho.Finalizado = true;
+        _ctx.SaveChanges();
+
+        var resposta = new
+        {
+            Mensagem = "Pedido finalizado com sucesso",
+            DetalhesDoPedido = new
+            {
+                Cliente = carrinho.Cliente.Nome,
+                Cardapio = carrinho.Cardapio.Sabor,
+                Carrinho = carrinho.TotalPedido,
+            }
+        };
+
+        return Ok(resposta);
+    }
+    catch (Exception e)
+    {
+        return BadRequest(e.Message);
+    }
+}
+	[HttpGet]
+	[Route("listarFinalizados")]
+	public IActionResult ListarPedidosFinalizados()
+{
+    try
+    {
+        List<Carrinho> carrinhosFinalizados = _ctx.Carrinhos
+            .Include(x => x.Cliente)
+            .Include(x => x.Cardapio)
+            .Where(c => c.Finalizado)
+            .ToList();
+
+        var resposta = carrinhosFinalizados.Select(c => new
+        {
+            Cliente = c.Cliente.Nome,
+            Cardapio = c.Cardapio.Sabor,
+          
+        });
+
+        return carrinhosFinalizados.Count == 0
+            ? NotFound("Nenhum pedido finalizado encontrado")
+            : Ok(resposta);
+    }
+    catch (Exception e)
+    {
+        return BadRequest(e.Message);
+    }
+}
+
 	
 }

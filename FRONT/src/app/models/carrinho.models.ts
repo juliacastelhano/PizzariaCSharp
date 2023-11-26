@@ -10,4 +10,6 @@ export interface Carrinho {
     quantidade : number;
     totalPedido? : number;
     criadoEm? : string;
+
+
 }

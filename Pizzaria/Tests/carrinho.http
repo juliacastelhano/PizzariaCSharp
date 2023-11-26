@@ -17,3 +17,22 @@ GET https://localhost:7288/api/carrinho/listarPorCliente/Luna
 
 ### Remover carrinho pelo ID
 DELETE https://localhost:7288/api/carrinho/deletar/3
+
+###Finalizar Pedido
+PATCH https://localhost:7288/api/carrinho/finalizar/1
+
+
+###Listar pedidos finalizados
+GET https://localhost:7288/api/carrinho/listarFinalizados
+
+
+# ### Alterar cardapio pelo ID
+# PUT https://localhost:7288/api/carrinho/alterar/1
+# Content-Type: application/json
+
+# {
+#     "clienteId" : 2,
+#     "cardapioId" : 3,
+#     "quantidade" : 1
+# }
+

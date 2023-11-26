@@ -8,12 +8,12 @@ GET https://localhost:7288/api/cliente/buscar/2
 POST https://localhost:7288/api/cliente/cadastrar
 Content-Type: application/json
 
-# {
-#     "nome" : "Larissa",
-#     "endereco" : "Rua dos morangos",
-#     "telefone" : 997465958
+{
+    "nome" : "Larissa",
+    "endereco" : "Rua dos morangos",
+    "telefone" : 997465958
 
-# }
+}
 
 # {
 #     "nome" : "Luna",
@@ -22,11 +22,11 @@ Content-Type: application/json
 
 # }
 
-{
-    "nome" : "Carlos",
-    "endereco" : "Rua das Laranjeiras",
-    "telefone" : 997465987
-}
+# {
+#     "nome" : "Carlos",
+#     "endereco" : "Rua das Laranjeiras",
+#     "telefone" : 997465987
+# }
 
 ### Remover cliente pelo ID
 DELETE https://localhost:7288/api/cliente/deletar/6
