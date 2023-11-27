@@ -43,9 +43,8 @@ export class ListarPedidoComponent {
 
   deletar(pedidoId: number) {
 	this.client
-	  .delete<Pedido[]>("https://localhost:7288/api/pedido/deletar/${pedidoId}")
+	  .delete<Pedido[]>(`https://localhost:7288/api/pedido/deletar/${pedidoId}`)
 	  .subscribe({
-
 		next: (pedidos) => {
 		  this.pedidos = pedidos;
 		  this.snackBar.open("Pedido deletado com sucesso!!", "OK", {

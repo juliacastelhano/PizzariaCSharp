@@ -56,10 +56,9 @@ export class CadastrarCarrinhoComponent {
       clienteId: this.clienteId,
       cardapioId: this.cardapioId,      
       quantidade: Number.parseInt(this.quantidade),
-      totalPedido: Number.parseFloat(this.totalPedido), 
+      // totalPedido: Number.parseFloat(this.totalPedido)
 
     };
-
 
     this.client
       .post<Carrinho>("https://localhost:7288/api/carrinho/cadastrar", carrinho)
