@@ -43,9 +43,7 @@ export class ListarPedidoComponent {
 
   deletar(pedidoId: number) {
 	this.client
-	  .delete<Pedido[]>(
-		https://localhost:7288/api/pedido/deletar/${pedidoId}
-	  )
+	  .delete<Pedido[]>("https://localhost:7288/api/pedido/deletar/${pedidoId}")
 	  .subscribe({
 
 		next: (pedidos) => {
@@ -61,6 +59,6 @@ export class ListarPedidoComponent {
 		error: (erro) => {
 		  console.log(erro);
 		},
-	  });
-  }
+   });
+ }
 }

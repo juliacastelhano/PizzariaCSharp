@@ -13,6 +13,7 @@ export class CadastrarCardapioComponent {
   sabor: string = "";
   descricao: string = "";
   preco: string = "";
+  quantidadeEstoque: string = "";
  
 
   constructor(
@@ -27,7 +28,7 @@ export class CadastrarCardapioComponent {
       sabor: this.sabor,
       descricao: this.descricao,
       preco: Number.parseFloat(this.preco),
-
+      quantidadeEstoque: Number.parseInt(this.quantidadeEstoque),
 
     };
 

@@ -82,6 +82,6 @@ export class CadastrarPedidoComponent {
         error: (erro) => {
           console.log(erro);
         },
-      });
-  }
+  });
+  }
 }

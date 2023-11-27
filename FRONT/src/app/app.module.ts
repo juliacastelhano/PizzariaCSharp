@@ -29,6 +29,8 @@ import { AlterarClienteComponent } from './pages/cliente/alterar-cliente/alterar
 import { AlterarCardapioComponent } from './pages/cardapio/alterar-cardapio/alterar-cardapio.component';
 import { ListarCarrinhoComponent } from './pages/carrinho/listar-carrinho/listar-carrinho.component';
 import { CadastrarCarrinhoComponent } from './pages/carrinho/cadastrar-carrinho/cadastrar-carrinho.component';
+import { ListarPedidoComponent } from './pages/pedido/listar-pedido/listar-pedido.component';
+import { CadastrarPedidoComponent } from './pages/pedido/cadastrar-pedido/cadastrar-pedido.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { CadastrarCarrinhoComponent } from './pages/carrinho/cadastrar-carrinho/
     AlterarCardapioComponent,
     ListarCarrinhoComponent,
     CadastrarCarrinhoComponent,
+    ListarPedidoComponent,
+    CadastrarPedidoComponent,
   ],
   imports: [
     BrowserModule,

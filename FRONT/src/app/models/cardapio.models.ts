@@ -3,4 +3,5 @@ export interface Cardapio {
     sabor : string;
     descricao : string;
     preco : number;
+    quantidadeEstoque?: number ;
 }
